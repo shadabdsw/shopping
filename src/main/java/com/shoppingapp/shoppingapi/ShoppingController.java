@@ -32,7 +32,7 @@ public class ShoppingController {
     }
 
     @GetMapping("/getitems")
-    public Item[] quizzes() {
+    public Item[] items() {
         Item[] arr = new Item[1];
         arr[0] = new Item("1", "Football", "Round ball", 250, "...");
 
