@@ -20,14 +20,22 @@ public class ShoppingController {
     @Autowired
     ShoppingRepository repository;
 
-    @PostMapping("/add") 
-    public String addItem(@RequestBody Item item){
+    @PostMapping("/add")
+    public String addItem(@RequestBody Item item) {
         repository.insert(item);
         return "Added Data in Stock Succesfully";
     }
 
-    @GetMapping("/get") 
+    @GetMapping("/get")
     public List<Item> getData() {
         return repository.findAll();
+    }
+
+    @GetMapping("/getitems")
+    public Item[] quizzes() {
+        Item[] arr = new Item[1];
+        arr[0] = new Item("1", "Football", "Round ball", 250, "...");
+
+        return arr;
     }
 }
